@@ -570,7 +570,7 @@ const Index = () => {
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Финансовая группа Gx2</h3>
                     <p className="text-muted-foreground">
-                      Часть крупной финансовой группы с устойчивым положением на рынке
+                      Активы по управлением группы более 42 млрд. руб.
                     </p>
                   </div>
                 </div>
