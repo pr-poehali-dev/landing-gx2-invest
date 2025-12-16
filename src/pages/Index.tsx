@@ -288,7 +288,7 @@ const Index = () => {
                 </div>
                 <CardTitle className="text-2xl">Портфель облигаций</CardTitle>
                 <CardDescription className="text-base">
-                  Размещение денег под процент, компенсирующий текущие издержки
+                  с рейтингом не ниже А (Высокий уровень надежности)
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
