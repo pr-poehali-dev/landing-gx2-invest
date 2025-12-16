@@ -404,15 +404,15 @@ const Index = () => {
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3">
                   <Icon name="CheckCircle2" className="text-accent mt-1 flex-shrink-0" size={20} />
-                  <p className="text-sm">Быстрый доступ к средствам в любой момент</p>
+                  <p className="text-sm">Быстрый выход в деньги для любой суммы</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <Icon name="CheckCircle2" className="text-accent mt-1 flex-shrink-0" size={20} />
-                  <p className="text-sm">Минимальные сроки размещения от 1 дня</p>
+                  <p className="text-sm">Ежедневная выплата процентов</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <Icon name="CheckCircle2" className="text-accent mt-1 flex-shrink-0" size={20} />
-                  <p className="text-sm">Конкурентная доходность при полной ликвидности</p>
+                  <p className="text-sm">Доходность на уровне Ключевой ставки ЦБ</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <Icon name="CheckCircle2" className="text-accent mt-1 flex-shrink-0" size={20} />
