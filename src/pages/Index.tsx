@@ -306,7 +306,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
-                  <p className="text-sm">Полное сопровождение и отчетность</p>
+                  <p className="text-sm">Облигации номинированные в долларах, евро и юанях с расчетами в рублях</p>
                 </div>
               </CardContent>
             </Card>
