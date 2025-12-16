@@ -537,7 +537,16 @@ const Index = () => {
                     <Icon name="Award" size={24} className="text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-1">Лицензия Банка России</h3>
+                    <h3 className="font-semibold text-lg mb-1">
+                      <a 
+                        href="https://www.cbr.ru/finorg/foinfo/?ogrn=1069670122829"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-primary transition-colors underline decoration-transparent hover:decoration-primary"
+                      >
+                        Лицензия Банка России
+                      </a>
+                    </h3>
                     <p className="text-muted-foreground">
                       Профессиональный участник рынка ценных бумаг, деятельность под контролем регулятора
                     </p>
