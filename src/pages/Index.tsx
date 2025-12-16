@@ -18,6 +18,7 @@ const Index = () => {
   const { toast } = useToast();
   const [amount, setAmount] = useState<string>('1000000');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -67,6 +68,85 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      {/* Chat Widget */}
+      {chatOpen && (
+        <Card className="fixed bottom-24 right-6 w-[350px] shadow-2xl z-50 animate-scale-in">
+          <CardHeader className="bg-gradient-to-r from-primary to-accent text-white pb-4">
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                <CardTitle className="text-lg">Онлайн-консультант</CardTitle>
+              </div>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-white hover:bg-white/20"
+                onClick={() => setChatOpen(false)}
+              >
+                <Icon name="X" size={20} />
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-4 pt-6">
+            <div className="bg-primary/5 p-4 rounded-lg">
+              <p className="text-sm text-muted-foreground mb-3">
+                Здравствуйте! Меня зовут Анна, я помогу вам с вопросами по размещению средств.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Свяжитесь с нами удобным способом:
+              </p>
+            </div>
+            
+            <div className="space-y-3">
+              <Button asChild className="w-full justify-start" size="lg" variant="outline">
+                <a href="tel:+74951234567" className="flex items-center gap-3">
+                  <Icon name="Phone" size={20} />
+                  <span>+7 (495) 123-45-67</span>
+                </a>
+              </Button>
+              
+              <Button asChild className="w-full justify-start bg-[#25D366] hover:bg-[#20BD5A] text-white" size="lg">
+                <a href="https://wa.me/74951234567" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                  <Icon name="MessageCircle" size={20} />
+                  <span>WhatsApp</span>
+                </a>
+              </Button>
+              
+              <Button asChild className="w-full justify-start bg-[#0088cc] hover:bg-[#0077b3] text-white" size="lg">
+                <a href="https://t.me/gx2invest" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                  <Icon name="Send" size={20} />
+                  <span>Telegram</span>
+                </a>
+              </Button>
+              
+              <Button asChild className="w-full justify-start" size="lg" variant="outline">
+                <a href="mailto:info@gx2invest.ru" className="flex items-center gap-3">
+                  <Icon name="Mail" size={20} />
+                  <span>info@gx2invest.ru</span>
+                </a>
+              </Button>
+            </div>
+            
+            <Button asChild className="w-full" size="lg">
+              <a href="#contact">Оставить заявку</a>
+            </Button>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Chat Button */}
+      <Button
+        size="lg"
+        className="fixed bottom-6 right-6 w-16 h-16 rounded-full shadow-2xl z-50 hover:scale-110 transition-transform"
+        onClick={() => setChatOpen(!chatOpen)}
+      >
+        {chatOpen ? (
+          <Icon name="X" size={28} />
+        ) : (
+          <Icon name="MessageCircle" size={28} />
+        )}
+      </Button>
+
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <a href="#" className="flex items-center">
