@@ -14,6 +14,7 @@ import { useToast } from '@/hooks/use-toast';
 
 const Index = () => {
   const { toast } = useToast();
+  const [amount, setAmount] = useState<string>('1000000');
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -21,6 +22,29 @@ const Index = () => {
     email: '',
     message: '',
   });
+
+  const calculateMonthlyIncome = (investmentAmount: number): number => {
+    const annualRate = 0.18;
+    const monthlyIncome = (investmentAmount * annualRate) / 12;
+    return monthlyIncome;
+  };
+
+  const formatCurrency = (value: number): string => {
+    return new Intl.NumberFormat('ru-RU', {
+      style: 'currency',
+      currency: 'RUB',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(value);
+  };
+
+  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, '');
+    setAmount(value);
+  };
+
+  const investmentAmount = Number(amount) || 0;
+  const monthlyIncome = calculateMonthlyIncome(investmentAmount);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,49 +135,51 @@ const Index = () => {
 
             <Card className="shadow-xl animate-scale-in">
               <CardHeader>
-                <CardTitle className="text-2xl">Быстрая заявка</CardTitle>
-                <CardDescription>Оставьте контакты — мы свяжемся в течение часа</CardDescription>
+                <CardTitle className="text-2xl">Калькулятор дохода</CardTitle>
+                <CardDescription>Рассчитайте ваш ежемесячный доход</CardDescription>
               </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
+              <CardContent className="space-y-6">
+                <div className="space-y-3">
+                  <label className="text-sm font-medium text-foreground">
+                    Сумма размещения
+                  </label>
+                  <div className="relative">
                     <Input
-                      placeholder="Ваше имя"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
+                      type="text"
+                      value={amount ? Number(amount).toLocaleString('ru-RU') : ''}
+                      onChange={handleAmountChange}
+                      placeholder="1 000 000"
+                      className="text-lg pr-12"
                     />
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground">
+                      ₽
+                    </span>
                   </div>
-                  <div>
-                    <Input
-                      placeholder="Название компании"
-                      value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      required
-                    />
+                </div>
+
+                <div className="bg-gradient-to-br from-primary/10 to-accent/10 p-6 rounded-xl border-2 border-primary/20">
+                  <div className="text-center space-y-2">
+                    <p className="text-sm text-muted-foreground">Ежемесячный доход</p>
+                    <p className="text-4xl font-bold text-primary">
+                      {formatCurrency(monthlyIncome)}
+                    </p>
+                    <div className="flex items-center justify-center gap-2 pt-2">
+                      <Icon name="TrendingUp" className="text-accent" size={20} />
+                      <p className="text-sm text-muted-foreground">при ставке 18% годовых</p>
+                    </div>
                   </div>
-                  <div>
-                    <Input
-                      type="tel"
-                      placeholder="Телефон"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      type="email"
-                      placeholder="Email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                    />
-                  </div>
-                  <Button type="submit" className="w-full" size="lg">
-                    Отправить заявку
-                  </Button>
-                </form>
+                </div>
+
+                <Button asChild className="w-full" size="lg">
+                  <a href="#contact">Оставить заявку</a>
+                </Button>
+
+                <div className="bg-muted/50 p-4 rounded-lg">
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    <Icon name="Info" className="inline-block mr-1" size={14} />
+                    Расчет является ориентировочным и не является офертой и индивидуальной инвестиционной рекомендацией. Чтобы получить более точный расчет оставьте Заявку и укажите в комментарии сумму, которую вы планируете разместить.
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>
