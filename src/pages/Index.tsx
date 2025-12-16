@@ -586,6 +586,42 @@ const Index = () => {
                 договора. Скрытых платежей нет.
               </AccordionContent>
             </AccordionItem>
+
+            <AccordionItem value="item-7" className="bg-white rounded-lg px-6 border">
+              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+                Что такое операции РЕПО (овернайт)?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                РЕПО овернайт — это краткосрочная сделка по размещению средств на 1 день под залог ценных бумаг. 
+                Это самый ликвидный инструмент денежного рынка: вы размещаете деньги сегодня, а на следующий день 
+                получаете их обратно с процентами. Доходность составляет около ключевой ставки ЦБ РФ, что значительно 
+                выше банковских депозитов до востребования.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-8" className="bg-white rounded-lg px-6 border">
+              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+                Чем фонды денежного рынка отличаются от банковских депозитов?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Фонды денежного рынка (ФДР) инвестируют в краткосрочные долговые инструменты и операции РЕПО. 
+                В отличие от депозитов, они предлагают: более высокую доходность (обычно на уровне ключевой ставки ЦБ), 
+                возможность вывода средств в любой день без потери процентов, диверсификацию вложений между надежными 
+                эмитентами. При этом средства не застрахованы АСВ, но риски минимальны за счет краткосрочного характера вложений.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-9" className="bg-white rounded-lg px-6 border">
+              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+                Как работает расчет дохода по операциям РЕПО?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Доход по РЕПО рассчитывается за каждый день размещения. Формула: (Сумма × Ставка × Количество дней) / 365. 
+                Например, при размещении 1 млн рублей под 16% годовых на 1 день доход составит примерно 438 рублей. 
+                При регулярном размещении (например, на месяц) средний доход будет около 13 000 рублей в месяц. 
+                Проценты начисляются автоматически и доступны для вывода или реинвестирования на следующий день.
+              </AccordionContent>
+            </AccordionItem>
           </Accordion>
         </div>
       </section>
