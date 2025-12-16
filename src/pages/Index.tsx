@@ -35,8 +35,12 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <Icon name="TrendingUp" size={32} className="text-primary" />
+          <div className="flex items-center gap-3">
+            <img 
+              src="https://cdn.poehali.dev/projects/268a603e-e9e8-4df6-bec0-c176fc91a128/files/9b17a707-c0bc-4591-8942-473b52552272.jpg" 
+              alt="Gx2 Invest Logo" 
+              className="h-10 w-10 object-contain"
+            />
             <span className="text-2xl font-bold text-secondary">Gx2 Invest</span>
           </div>
           <nav className="hidden md:flex gap-8">
@@ -559,8 +563,12 @@ const Index = () => {
       <footer className="bg-secondary text-white py-8 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2">
-              <Icon name="TrendingUp" size={28} className="text-primary" />
+            <div className="flex items-center gap-3">
+              <img 
+                src="https://cdn.poehali.dev/projects/268a603e-e9e8-4df6-bec0-c176fc91a128/files/9b17a707-c0bc-4591-8942-473b52552272.jpg" 
+                alt="Gx2 Invest Logo" 
+                className="h-8 w-8 object-contain bg-white rounded-md p-1"
+              />
               <span className="text-xl font-bold">Gx2 Invest</span>
             </div>
             <div className="text-center md:text-left text-white/80">
