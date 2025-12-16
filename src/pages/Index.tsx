@@ -294,7 +294,7 @@ const Index = () => {
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3">
                   <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
-                  <p className="text-sm">Ежемесячные купонные выплаты на расчетный счет компании</p>
+                  <p className="text-sm">Ежемесячные выплаты купонов до 18% годовых в рублях</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <Icon name="CheckCircle2" className="text-primary mt-1 flex-shrink-0" size={20} />
