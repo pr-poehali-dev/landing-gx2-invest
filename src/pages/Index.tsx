@@ -70,10 +70,10 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
               <h1 className="text-5xl lg:text-6xl font-bold text-secondary leading-tight">
-                Эффективное размещение свободных средств
+                Профессиональные решения на фондовом рынке для юридических лиц
               </h1>
               <p className="text-xl text-muted-foreground">
-                Профессиональные решения на фондовом рынке для юридических лиц. Размещайте деньги под проценты, которые компенсируют текущие издержки компании.
+                Доход от размещения рублей и валюты выше, чем в банке
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button size="lg" className="text-lg" asChild>
