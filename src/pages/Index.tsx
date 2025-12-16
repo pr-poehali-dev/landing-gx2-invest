@@ -513,6 +513,83 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20 px-4 bg-gradient-to-br from-white to-primary/5">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-4">Как начать работу с нами</h2>
+            <p className="text-xl text-muted-foreground">Простой путь к эффективному размещению средств</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="relative overflow-hidden hover:shadow-xl transition-all group">
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-accent"></div>
+              <CardHeader className="pt-8">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+                  <span className="text-3xl font-bold text-white">1</span>
+                </div>
+                <CardTitle className="text-xl text-center">Оставьте заявку</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-center text-muted-foreground">
+                  Мы с вами свяжемся и обсудим все детали
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="relative overflow-hidden hover:shadow-xl transition-all group">
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-accent"></div>
+              <CardHeader className="pt-8">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+                  <span className="text-3xl font-bold text-white">2</span>
+                </div>
+                <CardTitle className="text-xl text-center">Заключите договор ДУ</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-center text-muted-foreground">
+                  Мы определим ваш инвестиционный профиль и откроем инвестиционный счет
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="relative overflow-hidden hover:shadow-xl transition-all group">
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-accent"></div>
+              <CardHeader className="pt-8">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+                  <span className="text-3xl font-bold text-white">3</span>
+                </div>
+                <CardTitle className="text-xl text-center">Пополняйте счет</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-center text-muted-foreground">
+                  Мы сформируем портфель с учетом ваших пожеланий
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="relative overflow-hidden hover:shadow-xl transition-all group">
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-accent"></div>
+              <CardHeader className="pt-8">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+                  <span className="text-3xl font-bold text-white">4</span>
+                </div>
+                <CardTitle className="text-xl text-center">Выводите доход</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-center text-muted-foreground">
+                  Когда вам нужно — регулярно или по запросу
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" className="text-lg" asChild>
+              <a href="#contact">Начать сейчас</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section id="faq" className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
