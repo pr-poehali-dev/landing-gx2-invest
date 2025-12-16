@@ -84,10 +84,17 @@ const Index = () => {
                 </Button>
               </div>
               <div className="flex items-center gap-6 pt-6">
-                <div className="flex items-center gap-2">
-                  <Icon name="Shield" className="text-primary" size={24} />
-                  <span className="text-sm font-medium">Лицензия ЦБ РФ</span>
-                </div>
+                <a 
+                  href="https://www.cbr.ru/finorg/foinfo/?ogrn=1069670122829" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:text-primary transition-colors group"
+                >
+                  <Icon name="Shield" className="text-primary group-hover:scale-110 transition-transform" size={24} />
+                  <span className="text-sm font-medium underline decoration-transparent group-hover:decoration-primary transition-all">
+                    Лицензия ЦБ РФ
+                  </span>
+                </a>
                 <div className="flex items-center gap-2">
                   <Icon name="Award" className="text-primary" size={24} />
                   <span className="text-sm font-medium">На рынке с 2006</span>
