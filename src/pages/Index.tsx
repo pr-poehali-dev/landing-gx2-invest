@@ -318,7 +318,7 @@ const Index = () => {
                 </div>
                 <CardTitle className="text-2xl">Инструменты денежного рынка</CardTitle>
                 <CardDescription className="text-base">
-                  Краткосрочное размещение с высокой ликвидностью
+                  Биржевые операции РЕПО(овернайт) и фонды денежного рынка
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
