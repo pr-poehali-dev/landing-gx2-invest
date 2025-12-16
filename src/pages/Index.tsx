@@ -72,10 +72,17 @@ const Index = () => {
               <h1 className="text-5xl lg:text-6xl font-bold text-secondary leading-tight">
                 Профессиональные решения на фондовом рынке для юридических лиц
               </h1>
-              <p className="text-xl text-muted-foreground">
-                Доход от размещения рублей и валюты выше, чем в банке
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="space-y-4">
+                <p className="text-xl text-muted-foreground">
+                  Доход от размещения рублей и валюты выше, чем в банке
+                </p>
+                <div className="inline-flex items-center gap-3 bg-primary/10 px-6 py-3 rounded-xl border-2 border-primary/20">
+                  <Icon name="TrendingUp" className="text-primary" size={28} />
+                  <span className="text-3xl font-bold text-primary">до 18%</span>
+                  <span className="text-lg text-muted-foreground">годовых</span>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <Button size="lg" className="text-lg" asChild>
                   <a href="#contact">Получить консультацию</a>
                 </Button>
