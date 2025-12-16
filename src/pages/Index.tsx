@@ -9,12 +9,15 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { Slider } from '@/components/ui/slider';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
 
 const Index = () => {
   const { toast } = useToast();
   const [amount, setAmount] = useState<string>('1000000');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -43,8 +46,15 @@ const Index = () => {
     setAmount(value);
   };
 
+  const handleSliderChange = (value: number[]) => {
+    setAmount(value[0].toString());
+  };
+
   const investmentAmount = Number(amount) || 0;
   const monthlyIncome = calculateMonthlyIncome(investmentAmount);
+  const annualIncome = monthlyIncome * 12;
+
+  const closeMobileMenu = () => setMobileMenuOpen(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -83,9 +93,60 @@ const Index = () => {
               Контакты
             </a>
           </nav>
-          <Button asChild className="hidden md:inline-flex">
-            <a href="#contact">Оставить заявку</a>
-          </Button>
+          <div className="flex items-center gap-4">
+            <Button asChild className="hidden md:inline-flex">
+              <a href="#contact">Оставить заявку</a>
+            </Button>
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Icon name="Menu" size={24} />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <nav className="flex flex-col gap-6 mt-8">
+                  <a 
+                    href="#solutions" 
+                    className="text-lg font-medium hover:text-primary transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    Решения
+                  </a>
+                  <a 
+                    href="#advantages" 
+                    className="text-lg font-medium hover:text-primary transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    Преимущества
+                  </a>
+                  <a 
+                    href="#about" 
+                    className="text-lg font-medium hover:text-primary transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    О компании
+                  </a>
+                  <a 
+                    href="#faq" 
+                    className="text-lg font-medium hover:text-primary transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    FAQ
+                  </a>
+                  <a 
+                    href="#contact" 
+                    className="text-lg font-medium hover:text-primary transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    Контакты
+                  </a>
+                  <Button asChild className="mt-4" onClick={closeMobileMenu}>
+                    <a href="#contact">Оставить заявку</a>
+                  </Button>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </header>
 
@@ -139,7 +200,7 @@ const Index = () => {
                 <CardDescription>Рассчитайте ваш ежемесячный доход</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="space-y-3">
+                <div className="space-y-4">
                   <label className="text-sm font-medium text-foreground">
                     Сумма размещения
                   </label>
@@ -155,17 +216,41 @@ const Index = () => {
                       ₽
                     </span>
                   </div>
+                  <div className="pt-2">
+                    <Slider
+                      value={[investmentAmount]}
+                      onValueChange={handleSliderChange}
+                      min={100000}
+                      max={50000000}
+                      step={100000}
+                      className="w-full"
+                    />
+                    <div className="flex justify-between text-xs text-muted-foreground mt-2">
+                      <span>100 тыс ₽</span>
+                      <span>50 млн ₽</span>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="bg-gradient-to-br from-primary/10 to-accent/10 p-6 rounded-xl border-2 border-primary/20">
-                  <div className="text-center space-y-2">
-                    <p className="text-sm text-muted-foreground">Ежемесячный доход</p>
-                    <p className="text-4xl font-bold text-primary">
-                      {formatCurrency(monthlyIncome)}
-                    </p>
-                    <div className="flex items-center justify-center gap-2 pt-2">
-                      <Icon name="TrendingUp" className="text-accent" size={20} />
-                      <p className="text-sm text-muted-foreground">при ставке 18% годовых</p>
+                  <div className="space-y-4">
+                    <div className="text-center space-y-1">
+                      <p className="text-sm text-muted-foreground">Ежемесячный доход</p>
+                      <p className="text-4xl font-bold text-primary">
+                        {formatCurrency(monthlyIncome)}
+                      </p>
+                    </div>
+                    <div className="border-t border-primary/20 pt-3">
+                      <div className="text-center space-y-1">
+                        <p className="text-sm text-muted-foreground">Годовой доход</p>
+                        <p className="text-2xl font-bold text-accent">
+                          {formatCurrency(annualIncome)}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 pt-1">
+                      <Icon name="TrendingUp" className="text-accent" size={18} />
+                      <p className="text-xs text-muted-foreground">при ставке 18% годовых</p>
                     </div>
                   </div>
                 </div>
