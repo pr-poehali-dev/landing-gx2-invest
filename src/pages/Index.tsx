@@ -1028,9 +1028,14 @@ const Index = () => {
                 alt="Gx2 Invest" 
                 className="h-8 w-auto object-contain brightness-0 invert mb-4"
               />
-              <p className="text-white/70 text-sm">
+              <a 
+                href="https://www.cbr.ru/finorg/foinfo/?ogrn=1069670122829" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transition-colors text-sm block"
+              >
                 Лицензия профессионального участника рынка ценных бумаг № 065-12598-001000
-              </p>
+              </a>
             </div>
             
             <div>
