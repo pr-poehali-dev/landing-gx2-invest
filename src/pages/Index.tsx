@@ -1008,20 +1008,79 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="bg-secondary text-white py-8 px-4">
+      <footer className="bg-secondary text-white py-12 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
               <img 
                 src="https://cdn.poehali.dev/files/m_logo-gx2-invest-blue-dark-768x128.png" 
                 alt="Gx2 Invest" 
-                className="h-8 w-auto object-contain brightness-0 invert"
+                className="h-8 w-auto object-contain brightness-0 invert mb-4"
               />
+              <p className="text-white/70 text-sm">
+                Профессиональные решения на фондовом рынке для юридических лиц
+              </p>
             </div>
-            <div className="text-center md:text-left text-white/80">
-              <p>© 2024 Gx2 Invest. Все права защищены.</p>
-              <p className="text-sm mt-1">Лицензия профессионального участника рынка ценных бумаг</p>
+            
+            <div>
+              <h3 className="font-semibold text-lg mb-4">Ссылки</h3>
+              <div className="space-y-2">
+                <a 
+                  href="https://gx2invest.ru/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block text-white/70 hover:text-white transition-colors text-sm"
+                >
+                  Основной сайт
+                </a>
+                <a 
+                  href="https://gx2invest.ru/informations/protection-policy" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block text-white/70 hover:text-white transition-colors text-sm"
+                >
+                  Политика конфиденциальности
+                </a>
+              </div>
             </div>
+            
+            <div>
+              <h3 className="font-semibold text-lg mb-4">Мы в соцсетях</h3>
+              <div className="flex gap-4">
+                <a 
+                  href="https://t.me/gx2invest" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+                  aria-label="Telegram"
+                >
+                  <Icon name="Send" size={20} />
+                </a>
+                <a 
+                  href="https://vk.com/gx2invest" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+                  aria-label="VK"
+                >
+                  <Icon name="Share2" size={20} />
+                </a>
+                <a 
+                  href="https://dzen.ru/gx2invest" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+                  aria-label="Дзен"
+                >
+                  <Icon name="Rss" size={20} />
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-white/10 pt-6 text-center text-white/70 text-sm">
+            <p>© 2025 Gx2 Invest. Все права защищены.</p>
+            <p className="mt-1">Лицензия профессионального участника рынка ценных бумаг</p>
           </div>
         </div>
       </footer>
