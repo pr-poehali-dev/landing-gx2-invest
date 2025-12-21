@@ -103,6 +103,43 @@ const Index = () => {
     return emailRegex.test(email);
   };
 
+  const formatPhoneInput = (value: string): string => {
+    const digits = value.replace(/\D/g, '');
+    
+    if (digits.length === 0) return '';
+    
+    let formatted = '+7';
+    if (digits.length > 1) {
+      formatted += ' (' + digits.substring(1, 4);
+    }
+    if (digits.length >= 5) {
+      formatted += ') ' + digits.substring(4, 7);
+    }
+    if (digits.length >= 8) {
+      formatted += '-' + digits.substring(7, 9);
+    }
+    if (digits.length >= 10) {
+      formatted += '-' + digits.substring(9, 11);
+    }
+    
+    return formatted;
+  };
+
+  const formatINNInput = (value: string): string => {
+    const digits = value.replace(/\D/g, '');
+    return digits.substring(0, 12);
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatPhoneInput(e.target.value);
+    setFormData({ ...formData, phone: formatted });
+  };
+
+  const handleINNChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatINNInput(e.target.value);
+    setFormData({ ...formData, company: formatted });
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -118,7 +155,7 @@ const Index = () => {
     if (!validatePhone(formData.phone)) {
       toast({
         title: 'Ошибка валидации',
-        description: 'Введите корректный номер телефона в формате +7XXXXXXXXXX.',
+        description: 'Введите корректный номер телефона в формате +7 (XXX) XXX-XX-XX.',
         variant: 'destructive',
       });
       return;
@@ -877,8 +914,9 @@ const Index = () => {
                     <Input
                       placeholder="ИНН *"
                       value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      onChange={handleINNChange}
                       required
+                      maxLength={12}
                     />
                   </div>
                 </div>
@@ -886,9 +924,9 @@ const Index = () => {
                   <div>
                     <Input
                       type="tel"
-                      placeholder="Телефон *"
+                      placeholder="+7 (___) ___-__-__ *"
                       value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      onChange={handlePhoneChange}
                       required
                     />
                   </div>
