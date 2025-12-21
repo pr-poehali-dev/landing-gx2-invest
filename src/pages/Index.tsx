@@ -1029,7 +1029,7 @@ const Index = () => {
                 className="h-8 w-auto object-contain brightness-0 invert mb-4"
               />
               <p className="text-white/70 text-sm">
-                Профессиональные решения на фондовом рынке для юридических лиц
+                Лицензия профессионального участника рынка ценных бумаг № 065-12598-001000
               </p>
             </div>
             
