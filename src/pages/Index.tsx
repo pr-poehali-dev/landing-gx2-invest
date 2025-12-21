@@ -984,6 +984,30 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20 px-4 bg-gradient-to-br from-primary/5 to-accent/5">
+        <div className="container mx-auto max-w-4xl">
+          <Card className="border-2 border-primary/20 shadow-2xl hover:shadow-3xl transition-shadow">
+            <CardContent className="p-12 text-center">
+              <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                <Icon name="Handshake" size={40} className="text-white" />
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-secondary mb-4">
+                Станьте партнером Gx2 Invest
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Получайте агентскую комиссию от привлеченных клиентов
+              </p>
+              <Button size="lg" className="text-lg" asChild>
+                <a href="https://partners.gx2invest.ru" target="_blank" rel="noopener noreferrer">
+                  Узнать подробнее
+                  <Icon name="ExternalLink" size={20} className="ml-2" />
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       <footer className="bg-secondary text-white py-8 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
