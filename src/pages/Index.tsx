@@ -1010,7 +1010,7 @@ const Index = () => {
 
       <footer className="bg-secondary text-white py-12 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <img 
                 src="https://cdn.poehali.dev/files/m_logo-gx2-invest-blue-dark-768x128.png" 
@@ -1020,6 +1020,35 @@ const Index = () => {
               <p className="text-white/70 text-sm">
                 Профессиональные решения на фондовом рынке для юридических лиц
               </p>
+            </div>
+            
+            <div>
+              <h3 className="font-semibold text-lg mb-4">Контакты</h3>
+              <div className="space-y-3">
+                <a 
+                  href="tel:88007751376" 
+                  className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
+                >
+                  <Icon name="Phone" size={16} />
+                  <span>8 800 775 13 76</span>
+                </a>
+                <a 
+                  href="mailto:sales@gx2invest.ru" 
+                  className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
+                >
+                  <Icon name="Mail" size={16} />
+                  <span>sales@gx2invest.ru</span>
+                </a>
+                <a 
+                  href="https://gx2invest.ru/contacts" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm"
+                >
+                  <Icon name="MapPin" size={16} />
+                  <span>Екатеринбург, Москва</span>
+                </a>
+              </div>
             </div>
             
             <div>
