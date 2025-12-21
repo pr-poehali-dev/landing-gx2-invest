@@ -108,7 +108,6 @@ const Footer = () => {
         
         <div className="border-t border-white/10 pt-4 sm:pt-6 text-center text-white/70 text-xs sm:text-sm">
           <p>© 2025 Gx2 Invest. Все права защищены.</p>
-          <p className="mt-1">Лицензия профессионального участника рынка ценных бумаг</p>
         </div>
       </div>
     </footer>
