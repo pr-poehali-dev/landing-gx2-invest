@@ -527,9 +527,7 @@ const Index = () => {
             <div className="space-y-6">
               <h2 className="text-4xl lg:text-5xl font-bold text-secondary">О компании Gx2 Invest</h2>
               <p className="text-lg text-muted-foreground">
-                Gx2 Invest — профессиональный участник рынка ценных бумаг с 2006 года. Мы специализируемся на
-                управлении активами юридических лиц и предоставляем комплексные решения для эффективного
-                размещения свободных денежных средств.
+                Лицензия Банка России, член НАУФОР с 2006 года. Часть финансовой группы Gx2 с активами под управлением более 42 млрд.руб
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
