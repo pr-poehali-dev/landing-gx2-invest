@@ -964,21 +964,32 @@ const Index = () => {
                 <Icon name="Phone" size={28} className="text-white" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Телефон</h3>
-              <p className="text-white/90">+7 (495) 123-45-67</p>
+              <a href="tel:88007751376" className="text-white/90 hover:text-white transition-colors">
+                8 800 775 13 76
+              </a>
             </div>
             <div className="text-center text-white">
               <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Icon name="Mail" size={28} className="text-white" />
               </div>
               <h3 className="font-semibold text-lg mb-2">Email</h3>
-              <p className="text-white/90">info@gx2invest.ru</p>
+              <a href="mailto:sales@gx2invest.ru" className="text-white/90 hover:text-white transition-colors">
+                sales@gx2invest.ru
+              </a>
             </div>
             <div className="text-center text-white">
               <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Icon name="MapPin" size={28} className="text-white" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">Офис</h3>
-              <p className="text-white/90">Москва, ул. Примерная, 1</p>
+              <h3 className="font-semibold text-lg mb-2">Офисы</h3>
+              <a 
+                href="https://gx2invest.ru/contacts" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white/90 hover:text-white transition-colors"
+              >
+                Екатеринбург, Москва
+              </a>
             </div>
           </div>
         </div>
