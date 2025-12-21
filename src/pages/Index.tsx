@@ -210,14 +210,14 @@ const Index = () => {
             
             <div className="space-y-3">
               <Button asChild className="w-full justify-start" size="lg" variant="outline">
-                <a href="tel:+74951234567" className="flex items-center gap-3">
+                <a href="tel:88007751376" className="flex items-center gap-3">
                   <Icon name="Phone" size={20} />
-                  <span>+7 (495) 123-45-67</span>
+                  <span>8 800 775 13 76</span>
                 </a>
               </Button>
               
               <Button asChild className="w-full justify-start bg-[#25D366] hover:bg-[#20BD5A] text-white" size="lg">
-                <a href="https://wa.me/74951234567" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                <a href="https://wa.me/78007751376" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
                   <Icon name="MessageCircle" size={20} />
                   <span>WhatsApp</span>
                 </a>
@@ -231,9 +231,9 @@ const Index = () => {
               </Button>
               
               <Button asChild className="w-full justify-start" size="lg" variant="outline">
-                <a href="mailto:info@gx2invest.ru" className="flex items-center gap-3">
+                <a href="mailto:sales@gx2invest.ru" className="flex items-center gap-3">
                   <Icon name="Mail" size={20} />
-                  <span>info@gx2invest.ru</span>
+                  <span>sales@gx2invest.ru</span>
                 </a>
               </Button>
             </div>
