@@ -1091,7 +1091,7 @@ const Index = () => {
                   href="https://t.me/gx2invest" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-[#0088cc] hover:bg-[#0077b3] rounded-full flex items-center justify-center transition-colors"
                   aria-label="Telegram"
                 >
                   <Icon name="Send" size={20} />
@@ -1100,19 +1100,23 @@ const Index = () => {
                   href="https://vk.com/gx2invest" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-[#0077FF] hover:bg-[#0066DD] rounded-full flex items-center justify-center transition-colors"
                   aria-label="VK"
                 >
-                  <Icon name="Share2" size={20} />
+                  <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.45 14.8h-1.44c-.61 0-.8-.49-1.89-1.59-1-.95-1.44-1.08-1.69-1.08-.35 0-.45.1-.45.58v1.45c0 .39-.13.63-1.17.63-1.69 0-3.56-1.03-4.88-2.95-1.99-2.86-2.53-5.03-2.53-5.47 0-.25.1-.48.58-.48h1.44c.43 0 .6.2.76.65.85 2.45 2.29 4.59 2.88 4.59.22 0 .32-.1.32-.66v-2.57c-.07-1.4-.82-1.52-.82-2.02 0-.2.16-.4.43-.4h2.25c.36 0 .49.19.49.61v3.47c0 .36.16.49.26.49.22 0 .4-.13.81-.54 1.23-1.39 2.12-3.53 2.12-3.53.12-.25.31-.48.74-.48h1.44c.53 0 .65.27.53.64-.17.84-1.99 3.63-1.99 3.63-.19.3-.25.44 0 .78.18.25.78.77 1.19 1.23.74.84 1.31 1.54 1.46 2.02.16.49-.09.74-.62.74z"/>
+                  </svg>
                 </a>
                 <a 
                   href="https://dzen.ru/gx2invest" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-black hover:bg-gray-800 rounded-full flex items-center justify-center transition-colors"
                   aria-label="Дзен"
                 >
-                  <Icon name="Rss" size={20} />
+                  <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+                  </svg>
                 </a>
               </div>
             </div>
@@ -1120,7 +1124,6 @@ const Index = () => {
           
           <div className="border-t border-white/10 pt-6 text-center text-white/70 text-sm">
             <p>© 2025 Gx2 Invest. Все права защищены.</p>
-            <p className="mt-1">Лицензия профессионального участника рынка ценных бумаг</p>
           </div>
         </div>
       </footer>
