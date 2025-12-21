@@ -2,9 +2,9 @@ import Icon from '@/components/ui/icon';
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary text-white py-12 px-4">
+    <footer className="bg-secondary text-white py-8 sm:py-12 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
           <div>
             <img 
               src="https://cdn.poehali.dev/files/m_logo-gx2-invest-blue-dark-768x128.png" 
@@ -106,7 +106,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-white/10 pt-6 text-center text-white/70 text-sm">
+        <div className="border-t border-white/10 pt-4 sm:pt-6 text-center text-white/70 text-xs sm:text-sm">
           <p>© 2025 Gx2 Invest. Все права защищены.</p>
           <p className="mt-1">Лицензия профессионального участника рынка ценных бумаг</p>
         </div>

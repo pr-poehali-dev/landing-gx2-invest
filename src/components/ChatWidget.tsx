@@ -9,7 +9,7 @@ const ChatWidget = () => {
   return (
     <>
       {chatOpen && (
-        <Card className="fixed bottom-24 right-6 w-[350px] shadow-2xl z-50 animate-scale-in">
+        <Card className="fixed bottom-20 sm:bottom-24 right-4 sm:right-6 w-[calc(100vw-2rem)] sm:w-[350px] max-w-[350px] shadow-2xl z-50 animate-scale-in">
           <CardHeader className="bg-gradient-to-r from-primary to-accent text-white pb-4">
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-2">
@@ -75,13 +75,13 @@ const ChatWidget = () => {
 
       <Button
         size="lg"
-        className="fixed bottom-6 right-6 w-16 h-16 rounded-full shadow-2xl z-50 hover:scale-110 transition-transform"
+        className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-2xl z-50 hover:scale-110 transition-transform"
         onClick={() => setChatOpen(!chatOpen)}
       >
         {chatOpen ? (
-          <Icon name="X" size={28} />
+          <Icon name="X" size={24} className="sm:w-7 sm:h-7" />
         ) : (
-          <Icon name="MessageCircle" size={28} />
+          <Icon name="MessageCircle" size={24} className="sm:w-7 sm:h-7" />
         )}
       </Button>
     </>

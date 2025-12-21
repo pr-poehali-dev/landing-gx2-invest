@@ -137,19 +137,19 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 bg-gradient-to-r from-secondary to-secondary/90">
+    <section id="contact" className="py-12 sm:py-20 px-4 bg-gradient-to-r from-secondary to-secondary/90">
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-12 text-white">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">Свяжитесь с нами</h2>
-          <p className="text-xl text-white/90">
+        <div className="text-center mb-8 sm:mb-12 text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">Свяжитесь с нами</h2>
+          <p className="text-base sm:text-xl text-white/90">
             Оставьте заявку — обсудим ваши задачи и подберем оптимальное решение
           </p>
         </div>
 
         <Card className="shadow-2xl">
           <CardContent className="pt-6">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <Input
                     placeholder="Ваше имя *"
@@ -168,7 +168,7 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <Input
                     type="tel"
@@ -206,30 +206,30 @@ const ContactForm = () => {
           </CardContent>
         </Card>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-12">
+        <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 mt-8 sm:mt-12">
           <div className="text-center text-white">
-            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Icon name="Phone" size={28} className="text-white" />
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              <Icon name="Phone" size={24} className="text-white" />
             </div>
-            <h3 className="font-semibold text-lg mb-2">Телефон</h3>
+            <h3 className="font-semibold text-base sm:text-lg mb-2">Телефон</h3>
             <a href="tel:88007751376" className="text-white/90 hover:text-white transition-colors">
               8 800 775 13 76
             </a>
           </div>
           <div className="text-center text-white">
-            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Icon name="Mail" size={28} className="text-white" />
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              <Icon name="Mail" size={24} className="text-white" />
             </div>
-            <h3 className="font-semibold text-lg mb-2">Email</h3>
+            <h3 className="font-semibold text-base sm:text-lg mb-2">Email</h3>
             <a href="mailto:sales@gx2invest.ru" className="text-white/90 hover:text-white transition-colors">
               sales@gx2invest.ru
             </a>
           </div>
           <div className="text-center text-white">
-            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Icon name="MapPin" size={28} className="text-white" />
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              <Icon name="MapPin" size={24} className="text-white" />
             </div>
-            <h3 className="font-semibold text-lg mb-2">Офисы</h3>
+            <h3 className="font-semibold text-base sm:text-lg mb-2">Офисы</h3>
             <a 
               href="https://gx2invest.ru/contacts" 
               target="_blank" 

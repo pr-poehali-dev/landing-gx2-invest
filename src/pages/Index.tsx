@@ -51,32 +51,32 @@ const Index = () => {
       <ChatWidget />
       <Header />
 
-      <section className="pt-32 pb-20 px-4">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-in">
-              <h1 className="text-5xl lg:text-6xl font-bold text-secondary leading-tight">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-4 sm:space-y-6 animate-fade-in">
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-secondary leading-tight">
                 Профессиональные решения на фондовом рынке для юридических лиц
               </h1>
-              <div className="space-y-4">
-                <p className="text-xl text-muted-foreground">
+              <div className="space-y-3 sm:space-y-4">
+                <p className="text-base sm:text-xl text-muted-foreground">
                   Доход от размещения рублей и валюты выше, чем в банке
                 </p>
-                <div className="inline-flex items-center gap-3 bg-primary/10 px-6 py-3 rounded-xl border-2 border-primary/20">
-                  <Icon name="TrendingUp" className="text-primary" size={28} />
-                  <span className="text-3xl font-bold text-primary">до 18%</span>
-                  <span className="text-lg text-muted-foreground">годовых</span>
+                <div className="inline-flex items-center gap-2 sm:gap-3 bg-primary/10 px-4 sm:px-6 py-2 sm:py-3 rounded-xl border-2 border-primary/20">
+                  <Icon name="TrendingUp" className="text-primary" size={24} />
+                  <span className="text-2xl sm:text-3xl font-bold text-primary">до 18%</span>
+                  <span className="text-base sm:text-lg text-muted-foreground">годовых</span>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                <Button size="lg" className="text-lg" asChild>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
+                <Button size="lg" className="text-base sm:text-lg w-full sm:w-auto" asChild>
                   <a href="#contact">Получить консультацию</a>
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg" asChild>
+                <Button size="lg" variant="outline" className="text-base sm:text-lg w-full sm:w-auto" asChild>
                   <a href="#solutions">Посмотреть решения</a>
                 </Button>
               </div>
-              <div className="flex items-center gap-6 pt-6">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-4 sm:pt-6">
                 <a 
                   href="https://www.cbr.ru/finorg/foinfo/?ogrn=1069670122829" 
                   target="_blank" 
@@ -172,16 +172,16 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="solutions" className="py-20 px-4 bg-gradient-to-r from-secondary to-secondary/90">
+      <section id="solutions" className="py-12 sm:py-20 px-4 bg-gradient-to-r from-secondary to-secondary/90">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16 text-white">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">Наши решения</h2>
-            <p className="text-xl text-white/90">
+          <div className="text-center mb-8 sm:mb-16 text-white">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">Наши решения</h2>
+            <p className="text-base sm:text-xl text-white/90">
               Индивидуальный подход к размещению средств вашей компании
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             <Card className="border-2 hover:border-primary transition-all hover:shadow-2xl">
               <CardHeader>
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
@@ -245,16 +245,16 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="advantages" className="py-20 px-4">
+      <section id="advantages" className="py-12 sm:py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-4">
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary mb-3 sm:mb-4">
               Преимущества работы с нами
             </h2>
-            <p className="text-xl text-muted-foreground">Надежность и профессионализм на каждом этапе</p>
+            <p className="text-base sm:text-xl text-muted-foreground">Надежность и профессионализм на каждом этапе</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             <Card className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -342,12 +342,12 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section id="about" className="py-12 sm:py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-4xl lg:text-5xl font-bold text-secondary">О компании Gx2 Invest</h2>
-              <p className="text-lg text-muted-foreground">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-4 sm:space-y-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary">О компании Gx2 Invest</h2>
+              <p className="text-base sm:text-lg text-muted-foreground">
                 Лицензия Банка России, член НАУФОР с 2006 года. Часть финансовой группы Gx2 с активами под управлением более 42 млрд.руб
               </p>
               <div className="space-y-4">
@@ -396,23 +396,23 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-2xl p-8 space-y-6">
-              <h3 className="text-2xl font-bold text-secondary">Ключевые цифры</h3>
-              <div className="space-y-6">
-                <div className="border-l-4 border-primary pl-4">
-                  <div className="text-4xl font-bold text-primary mb-1">2006</div>
+            <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 space-y-4 sm:space-y-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-secondary">Ключевые цифры</h3>
+              <div className="space-y-4 sm:space-y-6">
+                <div className="border-l-4 border-primary pl-3 sm:pl-4">
+                  <div className="text-3xl sm:text-4xl font-bold text-primary mb-1">2006</div>
                   <div className="text-muted-foreground">Год основания компании</div>
                 </div>
-                <div className="border-l-4 border-accent pl-4">
-                  <div className="text-4xl font-bold text-accent mb-1">19+</div>
+                <div className="border-l-4 border-accent pl-3 sm:pl-4">
+                  <div className="text-3xl sm:text-4xl font-bold text-accent mb-1">19+</div>
                   <div className="text-muted-foreground">Лет опыта на фондовом рынке</div>
                 </div>
-                <div className="border-l-4 border-primary pl-4">
-                  <div className="text-4xl font-bold text-primary mb-1">+140%</div>
+                <div className="border-l-4 border-primary pl-3 sm:pl-4">
+                  <div className="text-3xl sm:text-4xl font-bold text-primary mb-1">+140%</div>
                   <div className="text-muted-foreground">Доходность клиентов за 3 года</div>
                 </div>
-                <div className="border-l-4 border-accent pl-4">
-                  <div className="text-4xl font-bold text-accent mb-1">100%</div>
+                <div className="border-l-4 border-accent pl-3 sm:pl-4">
+                  <div className="text-3xl sm:text-4xl font-bold text-accent mb-1">100%</div>
                   <div className="text-muted-foreground">Надежность и прозрачность</div>
                 </div>
               </div>
@@ -421,14 +421,14 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-gradient-to-br from-white to-primary/5">
+      <section className="py-12 sm:py-20 px-4 bg-gradient-to-br from-white to-primary/5">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-4">Как начать работу с нами</h2>
-            <p className="text-xl text-muted-foreground">Простой путь к эффективному размещению средств</p>
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary mb-3 sm:mb-4">Как начать работу с нами</h2>
+            <p className="text-base sm:text-xl text-muted-foreground">Простой путь к эффективному размещению средств</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <Card className="relative overflow-hidden hover:shadow-xl transition-all group">
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-accent"></div>
               <CardHeader className="pt-8">
@@ -490,7 +490,7 @@ const Index = () => {
             </Card>
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 sm:mt-12">
             <Button size="lg" className="text-lg" asChild>
               <a href="#contact">Начать сейчас</a>
             </Button>
@@ -498,16 +498,16 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="faq" className="py-20 px-4">
+      <section id="faq" className="py-12 sm:py-20 px-4">
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-4">Часто задаваемые вопросы</h2>
-            <p className="text-xl text-muted-foreground">Ответы на ключевые вопросы о размещении средств</p>
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary mb-3 sm:mb-4">Часто задаваемые вопросы</h2>
+            <p className="text-base sm:text-xl text-muted-foreground">Ответы на ключевые вопросы о размещении средств</p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
-            <AccordionItem value="item-1" className="bg-white rounded-lg px-6 border">
-              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+          <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
+            <AccordionItem value="item-1" className="bg-white rounded-lg px-4 sm:px-6 border">
+              <AccordionTrigger className="text-base sm:text-lg font-semibold hover:text-primary">
                 Какая минимальная сумма для размещения?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
@@ -515,8 +515,8 @@ const Index = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-2" className="bg-white rounded-lg px-6 border">
-              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+            <AccordionItem value="item-2" className="bg-white rounded-lg px-4 sm:px-6 border">
+              <AccordionTrigger className="text-base sm:text-lg font-semibold hover:text-primary">
                 Какая доходность по облигациям?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
@@ -524,8 +524,8 @@ const Index = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-3" className="bg-white rounded-lg px-6 border">
-              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+            <AccordionItem value="item-3" className="bg-white rounded-lg px-4 sm:px-6 border">
+              <AccordionTrigger className="text-base sm:text-lg font-semibold hover:text-primary">
                 Насколько безопасно размещение?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
@@ -533,8 +533,8 @@ const Index = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-4" className="bg-white rounded-lg px-6 border">
-              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+            <AccordionItem value="item-4" className="bg-white rounded-lg px-4 sm:px-6 border">
+              <AccordionTrigger className="text-base sm:text-lg font-semibold hover:text-primary">
                 Как быстро можно вывести средства?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
@@ -542,8 +542,8 @@ const Index = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-5" className="bg-white rounded-lg px-6 border">
-              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+            <AccordionItem value="item-5" className="bg-white rounded-lg px-4 sm:px-6 border">
+              <AccordionTrigger className="text-base sm:text-lg font-semibold hover:text-primary">
                 Какие документы нужны для открытия счета?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
@@ -551,8 +551,8 @@ const Index = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-6" className="bg-white rounded-lg px-6 border">
-              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+            <AccordionItem value="item-6" className="bg-white rounded-lg px-4 sm:px-6 border">
+              <AccordionTrigger className="text-base sm:text-lg font-semibold hover:text-primary">
                 Нужно ли платить комиссии?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
@@ -560,8 +560,8 @@ const Index = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-7" className="bg-white rounded-lg px-6 border">
-              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+            <AccordionItem value="item-7" className="bg-white rounded-lg px-4 sm:px-6 border">
+              <AccordionTrigger className="text-base sm:text-lg font-semibold hover:text-primary">
                 Что такое операции РЕПО (овернайт)?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
@@ -572,8 +572,8 @@ const Index = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-8" className="bg-white rounded-lg px-6 border">
-              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+            <AccordionItem value="item-8" className="bg-white rounded-lg px-4 sm:px-6 border">
+              <AccordionTrigger className="text-base sm:text-lg font-semibold hover:text-primary">
                 Чем фонды денежного рынка отличаются от банковских депозитов?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
@@ -584,8 +584,8 @@ const Index = () => {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-9" className="bg-white rounded-lg px-6 border">
-              <AccordionTrigger className="text-lg font-semibold hover:text-primary">
+            <AccordionItem value="item-9" className="bg-white rounded-lg px-4 sm:px-6 border">
+              <AccordionTrigger className="text-base sm:text-lg font-semibold hover:text-primary">
                 Как работает расчет дохода по операциям РЕПО?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
@@ -601,17 +601,17 @@ const Index = () => {
 
       <ContactForm />
 
-      <section className="py-20 px-4 bg-gradient-to-br from-primary/5 to-accent/5">
+      <section className="py-12 sm:py-20 px-4 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto max-w-4xl">
           <Card className="border-2 border-primary/20 shadow-2xl hover:shadow-3xl transition-shadow">
-            <CardContent className="p-12 text-center">
+            <CardContent className="p-6 sm:p-12 text-center">
               <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
                 <Icon name="Handshake" size={40} className="text-white" />
               </div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary mb-4">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-secondary mb-3 sm:mb-4">
                 Станьте партнером Gx2 Invest
               </h2>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-base sm:text-xl text-muted-foreground mb-6 sm:mb-8">
                 Получайте агентскую комиссию от привлеченных клиентов
               </p>
               <Button size="lg" className="text-lg" asChild>
