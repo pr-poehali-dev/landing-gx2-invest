@@ -57,8 +57,82 @@ const Index = () => {
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
+  const validateINN = (inn: string): boolean => {
+    const cleanINN = inn.replace(/\D/g, '');
+    if (cleanINN.length !== 10 && cleanINN.length !== 12) return false;
+    
+    if (cleanINN.length === 10) {
+      const coefficients = [2, 4, 10, 3, 5, 9, 4, 6, 8];
+      let sum = 0;
+      for (let i = 0; i < 9; i++) {
+        sum += parseInt(cleanINN[i]) * coefficients[i];
+      }
+      const checkDigit = (sum % 11) % 10;
+      return checkDigit === parseInt(cleanINN[9]);
+    }
+    
+    if (cleanINN.length === 12) {
+      const coefficients1 = [7, 2, 4, 10, 3, 5, 9, 4, 6, 8];
+      const coefficients2 = [3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8];
+      
+      let sum1 = 0;
+      for (let i = 0; i < 10; i++) {
+        sum1 += parseInt(cleanINN[i]) * coefficients1[i];
+      }
+      const checkDigit1 = (sum1 % 11) % 10;
+      
+      let sum2 = 0;
+      for (let i = 0; i < 11; i++) {
+        sum2 += parseInt(cleanINN[i]) * coefficients2[i];
+      }
+      const checkDigit2 = (sum2 % 11) % 10;
+      
+      return checkDigit1 === parseInt(cleanINN[10]) && checkDigit2 === parseInt(cleanINN[11]);
+    }
+    
+    return false;
+  };
+
+  const validatePhone = (phone: string): boolean => {
+    const cleanPhone = phone.replace(/\D/g, '');
+    return cleanPhone.length === 11 && cleanPhone.startsWith('7');
+  };
+
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateINN(formData.company)) {
+      toast({
+        title: 'Ошибка валидации',
+        description: 'ИНН должен содержать 10 или 12 цифр и быть корректным.',
+        variant: 'destructive',
+      });
+      return;
+    }
+    
+    if (!validatePhone(formData.phone)) {
+      toast({
+        title: 'Ошибка валидации',
+        description: 'Введите корректный номер телефона в формате +7XXXXXXXXXX.',
+        variant: 'destructive',
+      });
+      return;
+    }
+    
+    if (!validateEmail(formData.email)) {
+      toast({
+        title: 'Ошибка валидации',
+        description: 'Введите корректный email адрес.',
+        variant: 'destructive',
+      });
+      return;
+    }
+    
     toast({
       title: 'Заявка отправлена!',
       description: 'Наш специалист свяжется с вами в ближайшее время.',
