@@ -801,7 +801,7 @@ const Index = () => {
                   </div>
                   <div>
                     <Input
-                      placeholder="Название компании *"
+                      placeholder="ИНН *"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       required
