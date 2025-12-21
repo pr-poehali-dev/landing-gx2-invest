@@ -217,14 +217,14 @@ const Index = () => {
               </Button>
               
               <Button asChild className="w-full justify-start bg-[#25D366] hover:bg-[#20BD5A] text-white" size="lg">
-                <a href="https://wa.me/78007751376" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                <a href="https://wa.me/79122434435" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
                   <Icon name="MessageCircle" size={20} />
                   <span>WhatsApp</span>
                 </a>
               </Button>
               
               <Button asChild className="w-full justify-start bg-[#0088cc] hover:bg-[#0077b3] text-white" size="lg">
-                <a href="https://t.me/gx2invest" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                <a href="https://t.me/+79122434435" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
                   <Icon name="Send" size={20} />
                   <span>Telegram</span>
                 </a>
