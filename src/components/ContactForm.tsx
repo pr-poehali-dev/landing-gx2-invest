@@ -15,6 +15,7 @@ const ContactForm = () => {
     email: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateINN = (inn: string): boolean => {
     const cleanINN = inn.replace(/\D/g, '');
@@ -99,7 +100,7 @@ const ContactForm = () => {
     setFormData({ ...formData, company: formatted });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!validateINN(formData.company)) {
@@ -129,11 +130,41 @@ const ContactForm = () => {
       return;
     }
     
-    toast({
-      title: 'Заявка отправлена!',
-      description: 'Наш специалист свяжется с вами в ближайшее время.',
-    });
-    setFormData({ name: '', company: '', phone: '', email: '', message: '' });
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('https://functions.poehali.dev/13d8bc3e-9280-4969-83d2-10a6bd8c5d00', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        toast({
+          title: 'Заявка отправлена!',
+          description: 'Наш специалист свяжется с вами в ближайшее время.',
+        });
+        setFormData({ name: '', company: '', phone: '', email: '', message: '' });
+      } else {
+        toast({
+          title: 'Ошибка отправки',
+          description: data.error || 'Попробуйте позже или позвоните нам.',
+          variant: 'destructive',
+        });
+      }
+    } catch (error) {
+      toast({
+        title: 'Ошибка сети',
+        description: 'Проверьте подключение к интернету.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -196,8 +227,8 @@ const ContactForm = () => {
                   rows={5}
                 />
               </div>
-              <Button type="submit" size="lg" className="w-full text-lg">
-                Отправить заявку
+              <Button type="submit" size="lg" className="w-full text-lg" disabled={isSubmitting}>
+                {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
               </Button>
               <p className="text-sm text-muted-foreground text-center">
                 Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных
