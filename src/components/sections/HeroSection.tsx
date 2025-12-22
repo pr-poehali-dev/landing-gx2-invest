@@ -83,12 +83,12 @@ const HeroSection = () => {
 
           <Card className="shadow-xl animate-scale-in w-full">
             <CardHeader>
-              <CardTitle className="text-xl sm:text-2xl">Калькулятор дохода</CardTitle>
-              <CardDescription>Рассчитайте ваш ежемесячный доход</CardDescription>
+              <CardTitle className="text-2xl sm:text-2xl">Калькулятор дохода</CardTitle>
+              <CardDescription className="text-base sm:text-sm">Рассчитайте ваш ежемесячный доход</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4 sm:space-y-6">
               <div className="space-y-3 sm:space-y-4">
-                <label className="text-sm font-medium text-foreground">
+                <label className="text-base sm:text-sm font-medium text-foreground">
                   Сумма размещения
                 </label>
                 <div className="relative">
@@ -97,9 +97,9 @@ const HeroSection = () => {
                     value={amount ? Number(amount).toLocaleString('ru-RU') : ''}
                     onChange={handleAmountChange}
                     placeholder="1 000 000"
-                    className="text-base sm:text-lg pr-10 sm:pr-12"
+                    className="text-xl sm:text-lg pr-12 sm:pr-12 h-14 sm:h-auto"
                   />
-                  <span className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-muted-foreground text-sm sm:text-base">
+                  <span className="absolute right-4 sm:right-4 top-1/2 -translate-y-1/2 text-muted-foreground text-lg sm:text-base">
                     ₽
                   </span>
                 </div>
@@ -112,43 +112,43 @@ const HeroSection = () => {
                     step={100000}
                     className="w-full"
                   />
-                  <div className="flex justify-between text-xs text-muted-foreground mt-2">
+                  <div className="flex justify-between text-sm sm:text-xs text-muted-foreground mt-3">
                     <span>100 тыс ₽</span>
                     <span>50 млн ₽</span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-primary/10 to-accent/10 p-4 sm:p-6 rounded-xl border-2 border-primary/20">
+              <div className="bg-gradient-to-br from-primary/10 to-accent/10 p-5 sm:p-6 rounded-xl border-2 border-primary/20">
                 <div className="space-y-4">
-                  <div className="text-center space-y-1">
-                    <p className="text-sm text-muted-foreground">Ежемесячный доход</p>
-                    <p className="text-2xl sm:text-4xl font-bold text-primary break-all">
+                  <div className="text-center space-y-2">
+                    <p className="text-base sm:text-sm text-muted-foreground font-medium">Ежемесячный доход</p>
+                    <p className="text-3xl sm:text-4xl font-bold text-primary break-all">
                       {formatCurrency(monthlyIncome)}
                     </p>
                   </div>
-                  <div className="border-t border-primary/20 pt-3">
-                    <div className="text-center space-y-1">
-                      <p className="text-sm text-muted-foreground">Годовой доход</p>
-                      <p className="text-xl sm:text-2xl font-bold text-accent break-all">
+                  <div className="border-t border-primary/20 pt-4">
+                    <div className="text-center space-y-2">
+                      <p className="text-base sm:text-sm text-muted-foreground font-medium">Годовой доход</p>
+                      <p className="text-2xl sm:text-2xl font-bold text-accent break-all">
                         {formatCurrency(annualIncome)}
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center justify-center gap-2 pt-1">
-                    <Icon name="TrendingUp" className="text-accent" size={18} />
-                    <p className="text-xs text-muted-foreground">при ставке 18% годовых</p>
+                  <div className="flex items-center justify-center gap-2 pt-2">
+                    <Icon name="TrendingUp" className="text-accent" size={20} />
+                    <p className="text-sm sm:text-xs text-muted-foreground">при ставке 18% годовых</p>
                   </div>
                 </div>
               </div>
 
-              <Button asChild className="w-full" size="lg">
+              <Button asChild className="w-full text-lg sm:text-base h-14 sm:h-auto" size="lg">
                 <a href="#contact">Оставить заявку</a>
               </Button>
 
-              <div className="bg-muted/50 p-3 sm:p-4 rounded-lg">
-                <p className="text-[10px] sm:text-xs text-muted-foreground leading-relaxed">
-                  <Icon name="Info" className="inline-block mr-1" size={14} />
+              <div className="bg-muted/50 p-4 sm:p-4 rounded-lg">
+                <p className="text-xs sm:text-xs text-muted-foreground leading-relaxed">
+                  <Icon name="Info" className="inline-block mr-1" size={16} />
                   Расчет является ориентировочным и не является офертой и индивидуальной инвестиционной рекомендацией. Чтобы получить более точный расчет оставьте Заявку и укажите в комментарии сумму, которую вы планируете разместить.
                 </p>
               </div>
