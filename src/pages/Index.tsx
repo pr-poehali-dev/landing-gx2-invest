@@ -619,10 +619,10 @@ const Index = () => {
               <p className="text-base sm:text-xl text-muted-foreground mb-6 sm:mb-8">
                 Получайте агентскую комиссию от привлеченных клиентов
               </p>
-              <Button size="lg" className="text-lg" asChild>
-                <a href="https://partners.gx2invest.ru" target="_blank" rel="noopener noreferrer">
-                  Узнать подробнее
-                  <Icon name="ExternalLink" size={20} className="ml-2" />
+              <Button size="lg" className="text-base sm:text-lg w-full sm:w-auto" asChild>
+                <a href="https://partners.gx2invest.ru" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <span>Узнать подробнее</span>
+                  <Icon name="ExternalLink" size={20} className="ml-2 flex-shrink-0" />
                 </a>
               </Button>
             </CardContent>
