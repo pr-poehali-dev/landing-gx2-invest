@@ -17,6 +17,7 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   const [amount, setAmount] = useState<string>('1000000');
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
   const calculateMonthlyIncome = (investmentAmount: number): number => {
     const annualRate = 0.18;
@@ -36,10 +37,14 @@ const Index = () => {
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/\D/g, '');
     setAmount(value);
+    setIsAnimating(true);
+    setTimeout(() => setIsAnimating(false), 600);
   };
 
   const handleSliderChange = (value: number[]) => {
     setAmount(value[0].toString());
+    setIsAnimating(true);
+    setTimeout(() => setIsAnimating(false), 600);
   };
 
   const investmentAmount = Number(amount) || 0;
@@ -133,24 +138,24 @@ const Index = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-primary/10 to-accent/10 p-5 sm:p-6 rounded-xl border-2 border-primary/20">
+                <div className={`bg-gradient-to-br from-primary/10 to-accent/10 p-5 sm:p-6 rounded-xl border-2 border-primary/20 transition-all duration-300 ${isAnimating ? 'shadow-lg scale-[1.01]' : ''}`}>
                   <div className="space-y-4">
                     <div className="text-center space-y-2">
                       <p className="text-base sm:text-sm text-muted-foreground font-medium">Ежемесячный доход</p>
-                      <p className="text-3xl sm:text-4xl font-bold text-primary break-all">
+                      <p className={`text-3xl sm:text-4xl font-bold text-primary break-all transition-all duration-500 ease-out ${isAnimating ? 'animate-pulse-scale' : ''}`}>
                         {formatCurrency(monthlyIncome)}
                       </p>
                     </div>
                     <div className="border-t border-primary/20 pt-4">
                       <div className="text-center space-y-2">
                         <p className="text-base sm:text-sm text-muted-foreground font-medium">Годовой доход</p>
-                        <p className="text-2xl sm:text-2xl font-bold text-accent break-all">
+                        <p className={`text-2xl sm:text-2xl font-bold text-accent break-all transition-all duration-500 ease-out ${isAnimating ? 'animate-pulse-scale' : ''}`}>
                           {formatCurrency(annualIncome)}
                         </p>
                       </div>
                     </div>
                     <div className="flex items-center justify-center gap-2 pt-2">
-                      <Icon name="TrendingUp" className="text-accent" size={20} />
+                      <Icon name="TrendingUp" className="text-accent transition-transform duration-300 hover:scale-110" size={20} />
                       <p className="text-sm sm:text-xs text-muted-foreground">при ставке 18% годовых</p>
                     </div>
                   </div>
