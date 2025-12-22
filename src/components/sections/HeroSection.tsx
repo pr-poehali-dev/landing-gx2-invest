@@ -1,47 +1,36 @@
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Slider } from '@/components/ui/slider';
 import Icon from '@/components/ui/icon';
 
-const ANNUAL_RATE = 0.18;
-const MIN_INVESTMENT = 100000;
-const MAX_INVESTMENT = 50000000;
-const STEP = 100000;
-
 const HeroSection = () => {
   const [amount, setAmount] = useState<string>('1000000');
-  const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
-  const calculateMonthlyIncome = useCallback((investmentAmount: number): number => {
-    return (investmentAmount * ANNUAL_RATE) / 12;
-  }, []);
+  const calculateMonthlyIncome = (investmentAmount: number): number => {
+    const annualRate = 0.18;
+    const monthlyIncome = (investmentAmount * annualRate) / 12;
+    return monthlyIncome;
+  };
 
-  const formatCurrency = useCallback((value: number): string => {
+  const formatCurrency = (value: number): string => {
     return new Intl.NumberFormat('ru-RU', {
       style: 'currency',
       currency: 'RUB',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     }).format(value);
-  }, []);
+  };
 
-  const triggerAnimation = useCallback(() => {
-    setIsAnimating(true);
-    setTimeout(() => setIsAnimating(false), 600);
-  }, []);
-
-  const handleAmountChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/\D/g, '');
     setAmount(value);
-    triggerAnimation();
-  }, [triggerAnimation]);
+  };
 
-  const handleSliderChange = useCallback((value: number[]) => {
+  const handleSliderChange = (value: number[]) => {
     setAmount(value[0].toString());
-    triggerAnimation();
-  }, [triggerAnimation]);
+  };
 
   const investmentAmount = Number(amount) || 0;
   const monthlyIncome = calculateMonthlyIncome(investmentAmount);
@@ -118,9 +107,9 @@ const HeroSection = () => {
                   <Slider
                     value={[investmentAmount]}
                     onValueChange={handleSliderChange}
-                    min={MIN_INVESTMENT}
-                    max={MAX_INVESTMENT}
-                    step={STEP}
+                    min={100000}
+                    max={50000000}
+                    step={100000}
                     className="w-full"
                   />
                   <div className="flex justify-between text-sm sm:text-xs text-muted-foreground mt-3">
@@ -130,24 +119,24 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              <div className={`bg-gradient-to-br from-primary/10 to-accent/10 p-5 sm:p-6 rounded-xl border-2 border-primary/20 transition-all duration-300 ${isAnimating ? 'shadow-lg scale-[1.01]' : ''}`}>
+              <div className="bg-gradient-to-br from-primary/10 to-accent/10 p-5 sm:p-6 rounded-xl border-2 border-primary/20">
                 <div className="space-y-4">
                   <div className="text-center space-y-2">
                     <p className="text-base sm:text-sm text-muted-foreground font-medium">Ежемесячный доход</p>
-                    <p className={`text-3xl sm:text-4xl font-bold text-primary break-all transition-all duration-500 ease-out ${isAnimating ? 'animate-pulse-scale' : ''}`}>
+                    <p className="text-3xl sm:text-4xl font-bold text-primary break-all">
                       {formatCurrency(monthlyIncome)}
                     </p>
                   </div>
                   <div className="border-t border-primary/20 pt-4">
                     <div className="text-center space-y-2">
                       <p className="text-base sm:text-sm text-muted-foreground font-medium">Годовой доход</p>
-                      <p className={`text-2xl sm:text-2xl font-bold text-accent break-all transition-all duration-500 ease-out ${isAnimating ? 'animate-pulse-scale' : ''}`}>
+                      <p className="text-2xl sm:text-2xl font-bold text-accent break-all">
                         {formatCurrency(annualIncome)}
                       </p>
                     </div>
                   </div>
                   <div className="flex items-center justify-center gap-2 pt-2">
-                    <Icon name="TrendingUp" className="text-accent transition-transform duration-300 hover:scale-110" size={20} />
+                    <Icon name="TrendingUp" className="text-accent" size={20} />
                     <p className="text-sm sm:text-xs text-muted-foreground">при ставке 18% годовых</p>
                   </div>
                 </div>

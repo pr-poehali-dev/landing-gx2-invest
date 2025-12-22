@@ -2,50 +2,43 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 
-interface Solution {
-  icon: string;
-  title: string;
-  description: string;
-  features: string[];
-}
-
-const solutions: Solution[] = [
-  {
-    icon: 'Banknote',
-    title: 'Доверительное управление',
-    description: 'Профессиональное управление вашими активами с максимальной доходностью',
-    features: [
-      'Индивидуальная стратегия',
-      'Управление рисками',
-      'Прозрачная отчетность',
-      'Гибкий вывод средств'
-    ]
-  },
-  {
-    icon: 'PiggyBank',
-    title: 'Структурные продукты',
-    description: 'Инновационные решения для диверсификации портфеля',
-    features: [
-      'Гарантия возврата до 100% капитала',
-      'Доход до 18% годовых',
-      'Валютная защита',
-      'Простое оформление'
-    ]
-  },
-  {
-    icon: 'TrendingUp',
-    title: 'Брокерское обслуживание',
-    description: 'Доступ к торгам на российских и международных биржах',
-    features: [
-      'Низкие комиссии',
-      'Торговля акциями и облигациями',
-      'Квалифицированная поддержка',
-      'Аналитика и рекомендации'
-    ]
-  }
-];
-
 const SolutionsSection = () => {
+  const solutions = [
+    {
+      icon: 'Banknote',
+      title: 'Доверительное управление',
+      description: 'Профессиональное управление вашими активами с максимальной доходностью',
+      features: [
+        'Индивидуальная стратегия',
+        'Управление рисками',
+        'Прозрачная отчетность',
+        'Гибкий вывод средств'
+      ]
+    },
+    {
+      icon: 'PiggyBank',
+      title: 'Структурные продукты',
+      description: 'Инновационные решения для диверсификации портфеля',
+      features: [
+        'Гарантия возврата до 100% капитала',
+        'Доход до 18% годовых',
+        'Валютная защита',
+        'Простое оформление'
+      ]
+    },
+    {
+      icon: 'TrendingUp',
+      title: 'Брокерское обслуживание',
+      description: 'Доступ к торгам на российских и международных биржах',
+      features: [
+        'Низкие комиссии',
+        'Торговля акциями и облигациями',
+        'Квалифицированная поддержка',
+        'Аналитика и рекомендации'
+      ]
+    }
+  ];
+
   return (
     <section id="solutions" className="py-12 sm:py-20 px-4 bg-gradient-to-r from-secondary to-secondary/90">
       <div className="container mx-auto max-w-6xl">
@@ -59,7 +52,7 @@ const SolutionsSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {solutions.map((solution, index) => (
             <Card 
-              key={solution.title} 
+              key={index} 
               className="bg-white/95 backdrop-blur hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -72,8 +65,8 @@ const SolutionsSection = () => {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-                  {solution.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2">
+                  {solution.features.map((feature, fIndex) => (
+                    <li key={fIndex} className="flex items-start gap-2">
                       <Icon name="CheckCircle" className="text-primary flex-shrink-0 mt-0.5" size={18} />
                       <span className="text-sm">{feature}</span>
                     </li>
