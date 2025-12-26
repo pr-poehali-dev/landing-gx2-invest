@@ -231,7 +231,15 @@ const ContactForm = () => {
                 {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
               </Button>
               <p className="text-sm text-muted-foreground text-center">
-                Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных
+                Нажимая кнопку, вы соглашаетесь с{' '}
+                <a 
+                  href="https://gx2invest.ru/informations/protection-policy" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  политикой обработки персональных данных
+                </a>
               </p>
             </form>
           </CardContent>
