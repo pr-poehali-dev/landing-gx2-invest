@@ -42,7 +42,7 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-4 sm:space-y-6 animate-fade-in">
             <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-secondary leading-tight break-words">
-              Профессиональные решения на фондовом рынке для юридических лиц
+              Инвестиционный счет для бизнеса
             </h1>
             <div className="space-y-3 sm:space-y-4">
               <p className="text-base sm:text-xl text-muted-foreground">
