@@ -107,7 +107,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/10 pt-4 sm:pt-6 text-center text-white/70 text-xs sm:text-sm">
-          <p>© 2025 Gx2 Invest. Все права защищены.</p>
+          <p>© 2026 Gx2 Invest. Все права защищены.</p>
         </div>
       </div>
     </footer>
